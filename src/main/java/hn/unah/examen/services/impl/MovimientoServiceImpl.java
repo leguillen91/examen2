@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 
 import hn.unah.examen.entities.Cuentas;
 import hn.unah.examen.entities.Movimientos;
-import hn.unah.examen.entities.MovimientosJSON;
+import hn.unah.examen.json.MovimientoPorCuenta;
+import hn.unah.examen.json.MovimientosJSON;
 import hn.unah.examen.repositories.CuentasRepository;
 import hn.unah.examen.repositories.MovimientoRepository;
 import hn.unah.examen.services.MovimientoService;
@@ -60,4 +61,15 @@ public class MovimientoServiceImpl implements MovimientoService {
 		return null;
 	}
 
+	public MovimientoPorCuenta obtenerCuenta(String numeroCuenta) {
+		Cuentas cuenta = cuentaRepository.findByNumeroCuenta(numeroCuenta);
+		
+		if(cuenta != null) {
+			MovimientoPorCuenta movimiento = new MovimientoPorCuenta();
+			movimiento.setCuenta(cuenta);
+		//	movimiento.setMovimientos(movimientoRepository.findByCuenta(cuenta));
+			return movimiento;
+		}
+		return null;
+	}
 }

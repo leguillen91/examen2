@@ -11,6 +11,8 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "movimientos")
 @Data
@@ -29,6 +31,7 @@ public class Movimientos {
 	@Column(name = "fechamovimiento")
 	private Date fechaMovimiento;
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "numerocuenta")
 	private Cuentas cuenta; 

@@ -1,4 +1,4 @@
-package hn.unah.examen.entities;
+package hn.unah.examen.json;
 
 import lombok.Data;
 

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import hn.unah.examen.entities.Cliente;
+import hn.unah.examen.json.ClienteJSON;
 import hn.unah.examen.services.impl.ClienteServiceImpl;
 
 @RestController
@@ -24,7 +25,7 @@ public class ClienteController {
 	}
 
 	@GetMapping("/cliente/obtener")
-	public List<Cliente> obtenerClientes() {
+	public List<ClienteJSON> obtenerClientes() {
 		return this.clienteServiceImpl.obtenerClientes();
 	}
 }

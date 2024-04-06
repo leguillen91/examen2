@@ -1,5 +1,6 @@
 package hn.unah.examen.json;
 
+import hn.unah.examen.entities.Cuentas;
 import lombok.Data;
 
 @Data

@@ -7,5 +7,5 @@ import hn.unah.examen.entities.Cliente;
 
 @Repository
 public interface ClienteRepository extends CrudRepository<Cliente, String>{
- 
+	 public Cliente findByDni(String dni);
 }
